@@ -1,0 +1,9 @@
+{
+  "functions": {
+    "api/interactions.js": {
+      "maxDuration": 10,
+      "memory": 128,
+      "runtime": "nodejs18.x"
+    }
+  }
+}
