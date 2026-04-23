@@ -21,7 +21,8 @@ import {
   parseDuration,
   getPlayerUsername,
   getPlayerThumbnail
-} from "../../roblox.js"; // adjust path if needed
+} from "../roblox.js";
+
 
 // Cache (same as your original)
 const infoCache = new Map();
