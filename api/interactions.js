@@ -1,3 +1,9 @@
+export const config = {
+  api: {
+    bodyParser: false
+  }
+};
+
 import { verifyKey } from "discord-interactions";
 import {
   InteractionType,
@@ -5,6 +11,7 @@ import {
   InteractionResponseFlags,
   MessageComponentTypes
 } from "discord-interactions";
+import getRawBody from "raw-body";
 
 import {
   getPlayerData,
@@ -44,7 +51,8 @@ export default async function handler(req, res) {
   const signature = req.headers["x-signature-ed25519"];
   const timestamp = req.headers["x-signature-timestamp"];
 
-  const rawBody = JSON.stringify(req.body);
+  const rawBody = await getRawBody(req);
+
 
   const isValid = verifyKey(
     rawBody,
